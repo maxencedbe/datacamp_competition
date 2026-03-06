@@ -1,0 +1,1 @@
+command: python scoring.py --reference-dir $input/ref --prediction-dir $input/res --output-dir $output

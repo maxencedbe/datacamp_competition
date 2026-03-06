@@ -1,0 +1,48 @@
+title: Diabetic Retinopathy Detection
+description: Multilabel classification of retinal images into 5 severity levels.
+image:
+
+phases:
+  1:
+    phasenumber: 1
+    label: Development Phase
+    description: Public test set evaluation.
+    start_date: 2025-01-01
+    max_submissions: 100
+    max_submissions_per_day: 5
+    ingestion_program: ingestion_program/
+    scoring_program:   scoring_program/
+    reference_data:    dev_phase/reference_data/
+    input_data:        dev_phase/input_data/
+
+  2:
+    phasenumber: 2
+    label: Final Phase
+    description: Private test set evaluation.
+    start_date: 2025-06-01
+    max_submissions: 3
+    max_submissions_per_day: 1
+    ingestion_program: ingestion_program/
+    scoring_program:   scoring_program/
+    reference_data:    test_phase/reference_data/
+    input_data:        test_phase/input_data/
+
+leaderboard:
+  - label: F1 Macro
+    key: f1_macro
+  - label: F1 Micro
+    key: f1_micro
+  - label: Hamming Loss
+    key: hamming_loss
+  - label: Runtime (s)
+    key: runtime
+```
+
+---
+
+### `requirements.txt`
+```
+scikit-learn
+pandas
+numpy
+Pillow
