@@ -11,18 +11,10 @@ pages:
 
 tasks:
   - index: 0
-    name: Development task
-    description: 'Public test set evaluation.'
+    name: Development Task
+    description: 'Classification of retinal images into 5 severity levels of diabetic retinopathy.'
     input_data: dev_phase/input_data/
     reference_data: dev_phase/reference_data/
-    ingestion_program: ingestion_program/
-    scoring_program: scoring_program/
-
-  - index: 1
-    name: Final task
-    description: 'Private test set evaluation.'
-    input_data: test_phase/input_data/
-    reference_data: test_phase/reference_data/
     ingestion_program: ingestion_program/
     scoring_program: scoring_program/
 
@@ -30,27 +22,17 @@ solutions:
   - index: 0
     tasks:
       - 0
-      - 1
     path: solution/
 
 phases:
-  - name: Development phase
-    description: 'Development phase: tune your models on the public test set.'
-    start: 03-01-2026
-    end: 03-31-2026
+  - name: Development Phase
+    description: 'Development phase: tune your models and submit.'
+    start: 01-01-2025
+    end: 12-31-2025
     max_submissions_per_day: 5
     max_submissions: 100
     tasks:
       - 0
-
-  - name: Final phase
-    description: 'Final phase: evaluate on the private test set.'
-    start: 04-01-2026
-    end: 04-15-2026
-    max_submissions_per_day: 3
-    max_submissions: 30
-    tasks:
-      - 1
 
 leaderboards:
   - title: Results

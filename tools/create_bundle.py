@@ -7,7 +7,6 @@ PAGES_DIR = ROOT_DIR / "pages"
 INGESTION_DIR = ROOT_DIR / "ingestion_program"
 SCORING_DIR = ROOT_DIR / "scoring_program"
 DEV_PHASE_DIR = ROOT_DIR / "dev_phase"
-TEST_PHASE_DIR = ROOT_DIR / "test_phase"
 SOLUTION_DIR = ROOT_DIR / "solution"
 
 BUNDLE_FILES = [
@@ -24,7 +23,7 @@ if __name__ == "__main__":
             bundle.write(f, rel)
         for dirpath in [
             INGESTION_DIR, SCORING_DIR, PAGES_DIR,
-            DEV_PHASE_DIR, TEST_PHASE_DIR, SOLUTION_DIR
+            DEV_PHASE_DIR, SOLUTION_DIR
         ]:
             assert dirpath.exists(), (
                 f"{dirpath} does not exist. Make sure you followed all "
@@ -39,4 +38,5 @@ if __name__ == "__main__":
                 print(rel)
                 bundle.write(f, rel)
 
-    print(f"\nbundle.zip created: {(ROOT_DIR / 'bundle.zip').stat().st_size / 1024 / 1024:.1f} MB")
+    size = (ROOT_DIR / "bundle.zip").stat().st_size / 1024 / 1024
+    print(f"\nbundle.zip created: {size:.1f} MB")
