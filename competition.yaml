@@ -36,8 +36,8 @@ solutions:
 phases:
   - name: Development Phase
     description: 'Development phase: tune your models on the public test set.'
-    start: 01-01-2025
-    end: 05-31-2025
+    start: 03-01-2026
+    end: 03-31-2026
     max_submissions_per_day: 5
     max_submissions: 100
     tasks:
@@ -45,8 +45,8 @@ phases:
 
   - name: Final Phase
     description: 'Final phase: evaluate on the private test set.'
-    start: 06-01-2025
-    end: 12-31-2025
+    start: 04-01-2026
+    end: 04-15-2026
     max_submissions_per_day: 1
     max_submissions: 3
     tasks:
