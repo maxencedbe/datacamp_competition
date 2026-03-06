@@ -1,48 +1,74 @@
+version: 2
 title: Diabetic Retinopathy Detection
 description: Multilabel classification of retinal images into 5 severity levels.
-image:
+image: logo.png
+registration_auto_approve: True
+
+terms: pages/overview.md
+pages:
+  - title: Overview
+    file: pages/overview.md
+
+tasks:
+  - index: 0
+    name: Development Task
+    description: 'Public test set evaluation.'
+    input_data: dev_phase/input_data/
+    reference_data: dev_phase/reference_data/
+    ingestion_program: ingestion_program/
+    scoring_program: scoring_program/
+
+  - index: 1
+    name: Final Task
+    description: 'Private test set evaluation.'
+    input_data: test_phase/input_data/
+    reference_data: test_phase/reference_data/
+    ingestion_program: ingestion_program/
+    scoring_program: scoring_program/
+
+solutions:
+  - index: 0
+    tasks:
+      - 0
+      - 1
+    path: solution/
 
 phases:
-  1:
-    phasenumber: 1
-    label: Development Phase
-    description: Public test set evaluation.
-    start_date: 2025-01-01
-    max_submissions: 100
+  - name: Development Phase
+    description: 'Development phase: tune your models on the public test set.'
+    start: 01-01-2025
+    end: 05-31-2025
     max_submissions_per_day: 5
-    ingestion_program: ingestion_program/
-    scoring_program:   scoring_program/
-    reference_data:    dev_phase/reference_data/
-    input_data:        dev_phase/input_data/
+    max_submissions: 100
+    tasks:
+      - 0
 
-  2:
-    phasenumber: 2
-    label: Final Phase
-    description: Private test set evaluation.
-    start_date: 2025-06-01
-    max_submissions: 3
+  - name: Final Phase
+    description: 'Final phase: evaluate on the private test set.'
+    start: 06-01-2025
+    end: 12-31-2025
     max_submissions_per_day: 1
-    ingestion_program: ingestion_program/
-    scoring_program:   scoring_program/
-    reference_data:    test_phase/reference_data/
-    input_data:        test_phase/input_data/
+    max_submissions: 3
+    tasks:
+      - 1
 
-leaderboard:
-  - label: F1 Macro
-    key: f1_macro
-  - label: F1 Micro
-    key: f1_micro
-  - label: Hamming Loss
-    key: hamming_loss
-  - label: Runtime (s)
-    key: runtime
-```
-
----
-
-### `requirements.txt`
-```
-scikit-learn
-pandas
-numpy
-Pillow
+leaderboards:
+  - title: Results
+    key: main
+    columns:
+      - title: F1 Macro
+        key: f1_macro
+        index: 0
+        sorting: desc
+      - title: F1 Micro
+        key: f1_micro
+        index: 1
+        sorting: desc
+      - title: Hamming Loss
+        key: hamming_loss
+        index: 2
+        sorting: asc
+      - title: Runtime (s)
+        key: runtime
+        index: 3
+        sorting: asc
