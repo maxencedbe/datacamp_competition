@@ -1,8 +1,8 @@
-# 🏥 Diabetic Retinopathy Detection Challenge
+# Diabetic retinopathy detection challenge
 
 A [CodaBench](https://www.codabench.org/) machine learning competition for classifying retinal fundus images into **5 severity levels** of diabetic retinopathy.
 
-## 📋 Challenge Overview
+## Challenge overview
 
 Diabetic retinopathy (DR) is a diabetes complication that affects the eyes and is a leading cause of blindness worldwide. Early detection through automated analysis of retinal images is crucial for timely treatment.
 
@@ -18,7 +18,7 @@ In this challenge, participants must build a model that classifies retinal fundu
 
 The task is framed as a **multi-label classification** problem (one-hot encoded labels), evaluated using **F1 Macro**, **F1 Micro**, and **Hamming Loss**.
 
-## 📊 Dataset
+## Dataset
 
 - **Source**: [IDRiD — Indian Diabetic Retinopathy Image Dataset](https://universe.roboflow.com/officeworkspace/diabetic-retinopathy-dataset) (via Roboflow)
 - **License**: CC BY 4.0
@@ -27,7 +27,7 @@ The task is framed as a **multi-label classification** problem (one-hot encoded 
   - Test: 103 images (split into public/private for the two competition phases)
 - **Data preparation script**: [`tools/setup_data.py`](tools/setup_data.py)
 
-## 🏗️ Repository Structure
+## Repository structure
 
 ```
 challenge2/
@@ -65,7 +65,7 @@ challenge2/
 └── starting_kit.ipynb        # Getting started notebook (EDA + baseline)
 ```
 
-## 🚀 Getting Started
+## Getting started
 
 1. Open the [`starting_kit.ipynb`](starting_kit.ipynb) notebook for:
    - Exploratory Data Analysis (EDA)
@@ -76,7 +76,7 @@ challenge2/
 
 3. Submit your solution on CodaBench.
 
-## 👥 Team Members
+## Team members
 
 - **Member 1** — Maxence Debes
 - **Member 2** — Sinoué Gad
@@ -84,7 +84,7 @@ challenge2/
 - **Member 4** — Agathe Santus
 - **Member 5** — Nathan Vanier de Saint-Aulnay
 
-## 📚 References
+## References
 
 - [IDRiD Dataset on Roboflow](https://universe.roboflow.com/officeworkspace/diabetic-retinopathy-dataset)
 - [CodaBench Documentation](https://codabench.org/)

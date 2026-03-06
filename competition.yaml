@@ -11,7 +11,7 @@ pages:
 
 tasks:
   - index: 0
-    name: Development Task
+    name: Development task
     description: 'Classification of retinal images into 5 severity levels of diabetic retinopathy.'
     input_data: dev_phase/input_data/
     reference_data: dev_phase/reference_data/
@@ -25,11 +25,11 @@ solutions:
     path: solution/
 
 phases:
-  - name: Development Phase
+  - name: Development phase
     description: 'Development phase: tune your models and submit.'
-    start: 01-01-2025
-    end: 12-31-2025
-    max_submissions_per_day: 5
+    start: 03-01-2026
+    end: 05-31-2026
+    max_submissions_per_day: 10
     max_submissions: 100
     tasks:
       - 0

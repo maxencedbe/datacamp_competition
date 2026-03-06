@@ -1,6 +1,6 @@
 <div style="font-family: 'Segoe UI', Roboto, sans-serif; max-width: 900px; margin: auto;">
 
-<h1 style="text-align: center; color: #1a73e8;">🏥 Diabetic Retinopathy Detection Challenge</h1>
+<h1 style="text-align: center; color: #1a73e8;">Diabetic retinopathy detection challenge</h1>
 
 <p style="text-align: center; font-size: 1.15em; color: #555;">
   Classify retinal fundus images into <strong>5 severity levels</strong> of diabetic retinopathy using machine learning.
@@ -8,7 +8,7 @@
 
 <hr style="border: 1px solid #e0e0e0;">
 
-<h2 style="color: #1a73e8;">🎯 Objective</h2>
+<h2 style="color: #1a73e8;">Objective</h2>
 
 <p>
   <strong>Diabetic retinopathy (DR)</strong> is a diabetes complication that damages the blood vessels of the retina.
@@ -21,7 +21,7 @@
   which <strong>severity level</strong> of DR it corresponds to.
 </p>
 
-<h2 style="color: #1a73e8;">📊 Severity Levels</h2>
+<h2 style="color: #1a73e8;">Severity levels</h2>
 
 <table style="width: 100%; border-collapse: collapse; margin: 15px 0;">
   <thead>
@@ -60,7 +60,7 @@
   </tbody>
 </table>
 
-<h2 style="color: #1a73e8;">📁 Dataset</h2>
+<h2 style="color: #1a73e8;">Dataset</h2>
 
 <p>
   The dataset consists of <strong>510 retinal fundus images</strong> from the
@@ -79,7 +79,7 @@
   Each image belongs to exactly one severity class.
 </p>
 
-<h2 style="color: #1a73e8;">📐 Evaluation Metrics</h2>
+<h2 style="color: #1a73e8;">Evaluation metrics</h2>
 
 <p>Submissions are evaluated on the following metrics:</p>
 
@@ -119,7 +119,7 @@
   Predictions are <strong>thresholded at 0.5</strong> to produce binary labels before computing F1 and Hamming Loss.
 </p>
 
-<h2 style="color: #1a73e8;">🚀 How to Participate</h2>
+<h2 style="color: #1a73e8;">How to participate</h2>
 
 <ol>
   <li>Download the <strong>starting kit notebook</strong> (<code>starting_kit.ipynb</code>) from the GitHub repository.</li>
@@ -134,14 +134,13 @@
   <li>Zip your <code>submission.py</code> and upload it to CodaBench.</li>
 </ol>
 
-<h2 style="color: #1a73e8;">⚠️ Rules</h2>
+<h2 style="color: #1a73e8;">Rules</h2>
 
 <div style="background: #fff3cd; border-left: 4px solid #ffc107; padding: 12px; margin: 15px 0; border-radius: 4px;">
-  <strong>Development Phase</strong>: Up to <strong>100 submissions</strong> total (5 per day).<br>
-  <strong>Final Phase</strong>: Up to <strong>3 submissions</strong> total (1 per day).
+  Up to <strong>100 submissions</strong> total (<strong>10 per day</strong>).
 </div>
 
-<h2 style="color: #1a73e8;">📚 References</h2>
+<h2 style="color: #1a73e8;">References</h2>
 
 <ul>
   <li><a href="https://universe.roboflow.com/officeworkspace/diabetic-retinopathy-dataset" target="_blank">IDRiD Dataset (Roboflow)</a></li>
