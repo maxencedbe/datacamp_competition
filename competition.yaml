@@ -11,7 +11,7 @@ pages:
 
 tasks:
   - index: 0
-    name: Development Task
+    name: Development task
     description: 'Public test set evaluation.'
     input_data: dev_phase/input_data/
     reference_data: dev_phase/reference_data/
@@ -19,7 +19,7 @@ tasks:
     scoring_program: scoring_program/
 
   - index: 1
-    name: Final Task
+    name: Final task
     description: 'Private test set evaluation.'
     input_data: test_phase/input_data/
     reference_data: test_phase/reference_data/
@@ -34,7 +34,7 @@ solutions:
     path: solution/
 
 phases:
-  - name: Development Phase
+  - name: Development phase
     description: 'Development phase: tune your models on the public test set.'
     start: 03-01-2026
     end: 03-31-2026
@@ -43,12 +43,12 @@ phases:
     tasks:
       - 0
 
-  - name: Final Phase
+  - name: Final phase
     description: 'Final phase: evaluate on the private test set.'
     start: 04-01-2026
     end: 04-15-2026
-    max_submissions_per_day: 1
-    max_submissions: 3
+    max_submissions_per_day: 3
+    max_submissions: 30
     tasks:
       - 1
 

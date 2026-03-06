@@ -1,1 +1,2 @@
 command: python ingestion.py --data-dir $input_data --output-dir $output --submission-dir $program
+image: codalab/default-gpu
