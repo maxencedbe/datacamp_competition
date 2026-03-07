@@ -1,2 +1,2 @@
-command: python ingestion.py --data-dir $input_data --output-dir $output --submission-dir $program
+command: python ingestion.py --data-dir $input_data --output-dir $output --submission-dir $ingested_program
 image: codalab/default-gpu
