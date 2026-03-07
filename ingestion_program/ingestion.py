@@ -56,7 +56,23 @@ X_test  = pd.read_csv(os.path.join(data_dir, "test.csv"))
 train_img_dir = os.path.join(data_dir, "train_images")
 test_img_dir  = os.path.join(data_dir, "test_images")
 
-sys.path.insert(0, args.submission_dir)
+# Locate submission.py in the submission directory (may be in a subdirectory)
+submission_dir = args.submission_dir
+print(f"[DEBUG] submission_dir: {submission_dir}")
+print(f"[DEBUG] submission_dir exists: {os.path.exists(submission_dir)}")
+if os.path.exists(submission_dir):
+    print(f"[DEBUG] Contents of submission_dir: {os.listdir(submission_dir)}")
+
+if not os.path.isfile(os.path.join(submission_dir, "submission.py")):
+    # Search subdirectories for submission.py
+    for root, dirs, files in os.walk(submission_dir):
+        print(f"[DEBUG] Scanning {root}: files={files}")
+        if "submission.py" in files:
+            submission_dir = root
+            print(f"[DEBUG] Found submission.py in: {submission_dir}")
+            break
+
+sys.path.insert(0, submission_dir)
 from submission import get_model
 
 label_cols = ["0", "1", "2", "3", "4"]
