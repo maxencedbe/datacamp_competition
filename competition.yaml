@@ -13,7 +13,7 @@ tasks:
   - index: 0
     name: Development task
     description: 'Classification of retinal images into 5 severity levels of diabetic retinopathy.'
-    input_data: dev_phase/input_data/
+    input_data: dev_phase/data/
     reference_data: dev_phase/reference_data/
     ingestion_program: ingestion_program/
     scoring_program: scoring_program/
