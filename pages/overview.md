@@ -143,7 +143,6 @@
 <h2 style="color: #1a73e8;">References</h2>
 
 <ul>
-  <li><a href="https://github.com/maxencedbe/datacamp_competition" target="_blank">GitHub Repository</a></li>
   <li><a href="https://universe.roboflow.com/officeworkspace/diabetic-retinopathy-dataset" target="_blank">IDRiD Dataset (Roboflow)</a></li>
   <li><a href="https://scikit-learn.org/stable/modules/generated/sklearn.metrics.f1_score.html" target="_blank">Scikit-learn F1 Score Documentation</a></li>
 </ul>
