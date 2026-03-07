@@ -122,7 +122,7 @@
 <h2 style="color: #1a73e8;">How to participate</h2>
 
 <ol>
-  <li>Download the <strong>starting kit notebook</strong> (<code>starting_kit.ipynb</code>) from the GitHub repository.</li>
+  <li>Download the <strong>starting kit notebook</strong> (<code>starting_kit.ipynb</code>) from the GitHub repository (https://github.com/maxencedbe/datacamp_competition).</li>
   <li>Explore the data and understand the evaluation metrics.</li>
   <li>Implement your model in a <code>submission.py</code> file following the required interface:
     <ul>
@@ -143,6 +143,7 @@
 <h2 style="color: #1a73e8;">References</h2>
 
 <ul>
+  <li><a href="https://github.com/maxencedbe/datacamp_competition" target="_blank">GitHub Repository</a></li>
   <li><a href="https://universe.roboflow.com/officeworkspace/diabetic-retinopathy-dataset" target="_blank">IDRiD Dataset (Roboflow)</a></li>
   <li><a href="https://scikit-learn.org/stable/modules/generated/sklearn.metrics.f1_score.html" target="_blank">Scikit-learn F1 Score Documentation</a></li>
 </ul>
