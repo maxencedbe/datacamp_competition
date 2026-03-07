@@ -1,4 +1,4 @@
-import argparse, os, time
+import argparse, os, time, glob
 import pandas as pd
 import sys
 
@@ -10,13 +10,51 @@ args = parser.parse_args()
 
 os.makedirs(args.output_dir, exist_ok=True)
 
-# Charger les données
-X_train = pd.read_csv(os.path.join(args.data_dir, "train.csv"))
-y_train = pd.read_csv(os.path.join(args.data_dir, "train_labels.csv"))
-X_test  = pd.read_csv(os.path.join(args.data_dir, "test.csv"))
+# === Debug: find the actual data directory ===
+data_dir = args.data_dir
+print(f"[DEBUG] Initial data_dir: {data_dir}")
+print(f"[DEBUG] data_dir exists: {os.path.exists(data_dir)}")
+if os.path.exists(data_dir):
+    print(f"[DEBUG] Contents of data_dir: {os.listdir(data_dir)}")
 
-train_img_dir = os.path.join(args.data_dir, "train_images")
-test_img_dir  = os.path.join(args.data_dir, "test_images")
+# If train.csv is not directly in data_dir, search subdirectories
+if not os.path.isfile(os.path.join(data_dir, "train.csv")):
+    print(f"[DEBUG] train.csv not found in {data_dir}, searching subdirs...")
+    # Try parent directory
+    parent = os.path.dirname(data_dir)
+    if os.path.exists(parent):
+        print(f"[DEBUG] Parent dir ({parent}): {os.listdir(parent)}")
+    # Search for train.csv recursively
+    for root, dirs, files in os.walk(os.path.dirname(data_dir)):
+        print(f"[DEBUG] Scanning {root}: dirs={dirs}, files={files[:5]}")
+        if "train.csv" in files:
+            data_dir = root
+            print(f"[DEBUG] Found train.csv in: {data_dir}")
+            break
+    else:
+        # Also try common CodaBench mount patterns
+        for candidate in [
+            data_dir,
+            os.path.join(data_dir, "data"),
+            os.path.join(data_dir, "input_data"),
+            data_dir + "_data",
+            data_dir.replace("input_data", "input_data_data"),
+        ]:
+            if os.path.isfile(os.path.join(candidate, "train.csv")):
+                data_dir = candidate
+                print(f"[DEBUG] Found train.csv in candidate: {data_dir}")
+                break
+
+print(f"[DEBUG] Final data_dir: {data_dir}")
+print(f"[DEBUG] Contents: {os.listdir(data_dir) if os.path.exists(data_dir) else 'DIR NOT FOUND'}")
+
+# Charger les données
+X_train = pd.read_csv(os.path.join(data_dir, "train.csv"))
+y_train = pd.read_csv(os.path.join(data_dir, "train_labels.csv"))
+X_test  = pd.read_csv(os.path.join(data_dir, "test.csv"))
+
+train_img_dir = os.path.join(data_dir, "train_images")
+test_img_dir  = os.path.join(data_dir, "test_images")
 
 sys.path.insert(0, args.submission_dir)
 from submission import get_model

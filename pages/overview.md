@@ -122,7 +122,7 @@
 <h2 style="color: #1a73e8;">How to participate</h2>
 
 <ol>
-  <li>Download the <strong>starting kit notebook</strong> (<code>starting_kit.ipynb</code>) from the GitHub repository (https://github.com/maxencedbe/datacamp_competition).</li>
+  <li>Download the <strong>starting kit notebook</strong> (<code>starting_kit.ipynb</code>) from the GitHub repository : <a href="https://github.com/maxencedbe/datacamp_competition" style="color: blue;">here</a>.</li>
   <li>Explore the data and understand the evaluation metrics.</li>
   <li>Implement your model in a <code>submission.py</code> file following the required interface:
     <ul>
