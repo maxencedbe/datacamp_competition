@@ -12,6 +12,7 @@ SOLUTION_DIR = ROOT_DIR / "solution"
 BUNDLE_FILES = [
     ROOT_DIR / "competition.yaml",
     ROOT_DIR / "logo.png",
+    ROOT_DIR / "requirements.txt",
 ]
 
 
