@@ -27,3 +27,6 @@ env/
 
 # CodaBench bundle (generated)
 bundle.zip
+
+# Submission test
+submission_test.zip
