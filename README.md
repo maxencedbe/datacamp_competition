@@ -78,7 +78,7 @@ challenge2/
 
 ## Team members
 
-- **Member 1** - Bezacier Alexis
+- **Member 1** — Bezacier Alexis
 - **Member 2** — Debes Maxence
 - **Member 3** — Gad Sinoué
 - **Member 4** — Hemzellec-Davidson Vadim
