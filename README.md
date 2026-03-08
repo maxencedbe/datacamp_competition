@@ -1,6 +1,6 @@
 # Diabetic retinopathy detection challenge
 
-A [CodaBench](https://www.codabench.org/) machine learning competition for classifying retinal fundus images into **5 severity levels** of diabetic retinopathy.
+A [CodaBench](https://www.codabench.org/competitions/14569/) machine learning competition for classifying retinal fundus images into **5 severity levels** of diabetic retinopathy.
 
 ## Challenge overview
 
@@ -78,11 +78,12 @@ challenge2/
 
 ## Team members
 
-- **Member 1** — Maxence Debes
-- **Member 2** — Sinoué Gad
-- **Member 3** — Vadim Hemzellec-Davidson
-- **Member 4** — Agathe Santus
-- **Member 5** — Nathan Vanier de Saint-Aulnay
+- **Member 1** - Bezacier Alexis
+- **Member 2** — Debes Maxence
+- **Member 3** — Gad Sinoué
+- **Member 4** — Hemzellec-Davidson Vadim
+- **Member 5** — Santus Agathe
+- **Member 6** — Vanier de Saint-Aulnay Nathan
 
 ## References
 
