@@ -17,11 +17,19 @@ y_pred = pd.read_csv(os.path.join(args.prediction_dir, "predictions.csv"))[label
 
 y_pred_bin = (y_pred >= 0.5).astype(int)
 
-scores = {
-    "f1_macro":    round(f1_score(y_true, y_pred_bin, average="macro",  zero_division=0), 4),
-    "f1_micro":    round(f1_score(y_true, y_pred_bin, average="micro",  zero_division=0), 4),
-    "hamming_loss": round(hamming_loss(y_true, y_pred_bin), 4),
-}
+import warnings
+warnings.filterwarnings("ignore")
+
+try:
+    scores = {
+        "f1_macro":    round(f1_score(y_true, y_pred_bin, average="macro"), 4),
+        "f1_micro":    round(f1_score(y_true, y_pred_bin, average="micro"), 4),
+        "hamming_loss": round(hamming_loss(y_true, y_pred_bin), 4),
+    }
+except Exception as e:
+    print("Scoring error: {}".format(e))
+    scores = {"f1_macro": 0, "f1_micro": 0, "hamming_loss": 1}
+
 
 try:
     runtime = pd.read_csv(
